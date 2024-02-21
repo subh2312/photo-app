@@ -1,0 +1,29 @@
+server:
+  port: 6660
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:6661/eureka
+    enabled: true
+
+
+spring:
+  application:
+    name: PHOTO-APP-API-GATEWAY
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: USER-SERVICE
+            uri: lb://USER-SERVICE
+            predicates:
+              - Path=/users/**
+          - id: ACCOUNT-MANAGEMENT
+            uri: lb://ACCOUNT-MANAGEMENT
+            predicates:
+              - Path=/account/**
+          - id: AUTH-SERVICE
+            uri: lb://AUTH-SERVICE
+            predicates:
+              - Path=/auth/**

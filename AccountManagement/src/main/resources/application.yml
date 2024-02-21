@@ -1,0 +1,14 @@
+server:
+  port: 6664
+
+spring:
+  application:
+    name: ACCOUNT-MANAGEMENT
+  devtools:
+    livereload:
+      enabled: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:6661/eureka
+    enabled: true

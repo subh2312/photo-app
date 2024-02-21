@@ -1,0 +1,16 @@
+server:
+  port: 6662
+
+spring:
+  application:
+    name: AUTH-SERVICE
+
+eureka:
+    client:
+      serviceUrl:
+       defaultZone: http://localhost:6661/eureka
+      enabled: true
+
+jwt:
+  secret: "902ffc52f4ab670361e543008a5f8e86005edadfbc1df36f5cc375b433448aff"
+  expirationMs: 86400000
